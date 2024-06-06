@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Búsqueda de Órdenes de Servicio</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script>
+        function resizeIframe(obj) {
+          obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container mt-4">
+
+        <div class="row">
+            <div class="col">
+                <h1>Listado de Órdenes de Servicio</h1>
+            </div>
+
+            <div class="col text-right">
+                <a href="#" style="float:right;" class="btn btn-primary mb-3">Agregar Orden</a>
+            </div>
+        </div>
+        
+        <div class="filter-section mb-4 border-top border-bottom border-2 p-3">
+            <h4>Filtrar Órdenes</h4>
+            <form action="../buscar_reparacion.php" method="POST" target="resultado_frame" id="formulario_busqueda">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label for="numero">Número de Orden:</label>
+                            <input type="text" class="form-control" id="numero" name="numero" placeholder="Ejemplo: 12345">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label for="fecha">Fecha de Servicio:</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label for="dni">DNI del Cliente:</label>
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="Ejemplo: 12345678X">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="nombre">Nombre del cliente:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Juan">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group mb-3">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo: 6XX XXX XXX">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group mb-3">
+                            <label for="imei">IMEI:</label>
+                            <input type="text" class="form-control" id="imei" name="imei" placeholder="Ejemplo: 123456789012345">
+                        </div>
+                    </div>
+                    <div class="col-md-1 mt-4">
+                        <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+                    </div>
+                </div>
+            </form>
+        </div>    
+            
+        <iframe name="resultado_frame" frameborder="0" scrolling="yes" width="100%" onload="resizeIframe(this)"></iframe>
+        
+    </div>
+        
+    
+    
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
